@@ -103,11 +103,14 @@ void handle_second_tick(AppContextRef ctx, PebbleTickEvent *t)
     first = false;
 }
 
-void pbl_main(void *params) {
-  PebbleAppHandlers handlers = {
+void pbl_main(void *params)
+{
+  PebbleAppHandlers handlers =
+  {
       .init_handler = &handle_init,
       .deinit_handler = &handle_deinit,
-      .tick_info = {
+      .tick_info =
+      {
           .tick_handler = &handle_second_tick,
           .tick_units = SECOND_UNIT
       }
